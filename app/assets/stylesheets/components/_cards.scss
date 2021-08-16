@@ -1,0 +1,40 @@
+.game-card {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 240px;
+  padding: 5px;
+
+  .gc-photos {
+    height: 230px;
+    width: 230px;
+    border-radius: 10px;
+  }
+
+  .gc-content {
+    display: flex;
+    font-size: 14px;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-between;
+    margin-top: 5px;
+
+    .gc-left-txt {
+      display:flex;
+      flex-direction: column;
+
+      .gc-title {
+        font-weight: bold;
+      }
+
+      .gc-address {
+        font-weight: lighter;
+      }
+    }
+    .gc-price {
+
+    }
+  }
+}

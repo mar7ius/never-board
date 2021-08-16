@@ -1,0 +1,36 @@
+.game-card {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  align-items: stretch;
+
+  .gc-photos {
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+  }
+
+  .gc-content {
+    display: flex;
+    font-size: 14px;
+    flex-direction: row;
+    align-content: space-between;
+
+    .gc-left-txt {
+      display:flex;
+      flex-direction: column;
+
+      .gc-title {
+        font-weight: bold;
+      }
+
+      .gc-address {
+        font-weight: lighter;
+      }
+    }
+    .gc-price {
+
+    }
+  }
+}

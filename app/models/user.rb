@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :client_booking, through: :games, source: :bookings
   validates :first_name, :last_name, presence: true
+
+  # add an avatar to user:
+  has_one_attached :avatar
 end

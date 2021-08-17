@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="game-card">
+
+      <%# <% @article.photos.each do |photo| %>
+      <%# <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <%# <% end %>
+
+<h1>Category: <%= @game.category %></h1>
+<p>Address: <%= @game.address %></p>
+<p>Description: <%= @game.description %></p>
+<h2>Price: <%= @game.price %></h2>
+
+  <% if policy(@game).update? %>
+    <%= link_to '<- Edit', edit_game_path%>
+  <% end %>
+
+  <% if policy(Game).create? %>
+    <%= link_to "New game", new_game_path %>
+  <% end %>
+
+  <% if policy(@game).destroy? %>
+      <%= link_to '<- Delete', game_path, method: :delete %>
+   <% end %>
+
+    </div>
+
+  </div>
+</div>

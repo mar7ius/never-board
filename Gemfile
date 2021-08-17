@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'devise'
 
 gem 'cloudinary', '~> 1.16.0'
+gem 'pundit'
 
 # add faker - to be remove if not wanted in production
 gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"

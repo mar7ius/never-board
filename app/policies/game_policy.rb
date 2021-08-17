@@ -14,7 +14,7 @@ class GamePolicy < ApplicationPolicy
     return true
   end
 
-  def update
+  def update?
     record.user == user
   end
 

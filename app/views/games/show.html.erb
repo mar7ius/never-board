@@ -12,6 +12,19 @@
 <p>Description: <%= @game.description %></p>
 <h2>Price: <%= @game.price %></h2>
 
+  <% if policy(@game).update? %>
+    <%= link_to '<- Edit', edit_game_path%>
+  <% end %>
+
+  <% if policy(Game).create? %>
+    <%= link_to "New game", new_game_path %>
+  <% end %>
+
+  <% if policy(@game).destroy? %>
+      <%= link_to '<- Delete', game_path, method: :delete %>
+   <% end %>
+
     </div>
+
   </div>
 </div>

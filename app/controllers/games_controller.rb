@@ -10,13 +10,14 @@ class GamesController < ApplicationController
   end
 
   def new
+    @game = Game.new
     authorize @game
-    @games = Game.new
   end
 
   def create
-    authorize @game
     @game = Game.new(game_params)
+    authorize @game
+    @game.user = current_user
     if @game.save
       redirect_to games_path
     else
@@ -29,19 +30,20 @@ class GamesController < ApplicationController
 
   def update
     @game.update(game_params)
+    authorize @game
     redirect_to game_path(@game)
   end
 
   def destroy
     @game.destroy
-    redirect_to game_path
+    authorize @game
+    redirect_to games_path
   end
 
   private
 
   def set_game
     @game = Game.find(params[:id])
-
   end
 
   def game_params

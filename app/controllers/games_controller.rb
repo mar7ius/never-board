@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_game, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -47,6 +48,6 @@ class GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:category, :address, :description, :price, photos: [])
+    params.require(:game).permit(:category, :address, :description, :available, :price, photos: [])
   end
 end

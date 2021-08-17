@@ -1,8 +1,7 @@
 class GamePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
-      # scope.where.not(user: user).order(created_at: :desc)
+      scope.where.not(user: user).order(created_at: :desc)
     end
   end
 

@@ -35,6 +35,9 @@ gem 'devise'
 
 gem 'cloudinary', '~> 1.16.0'
 
+# add faker - to be remove if not wanted in production
+gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

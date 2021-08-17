@@ -4,11 +4,10 @@
       <div class="bg-white rounded p-3 shadow">
         <h3>Add your Game here:</h3>
         <%= simple_form_for @game do |f| %>
-          <%= f.input :category, placeholder: 'Pinball' %>
+          <%= f.input :category, collection: Game::CATEGORIES %>
           <%= f.input :address, placeholder: '1 rue de Matignon' %>
           <%= f.input :description, placeholder: '' %>
           <%= f.input :price, placeholder: '€' %>
-          <%= f.input :available%>
           <%= f.submit class: 'btn btn-flat' %>
         <% end %>
       </div>

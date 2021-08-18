@@ -1,4 +1,9 @@
+<% if (controller_name == "pages" && action_name == "home") %>
 <div class="navbar navbar-expand-sm navbar-lewagon navbar-transparent fixed-top">
+<% else %>
+<div class="navbar navbar-expand-sm navbar-lewagon navbar-white">
+<% end %>
+
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "logo-never-board.png" %>
     <% end %>
@@ -25,7 +30,11 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        <% if (controller_name == "pages" && action_name == "home") %>
+          <%= link_to "Login", new_user_session_path, class: "btn-clear btn-white", id: "btn-login" %>
+          <% else %>
+          <%= link_to "Login", new_user_session_path, class: "btn-clear btn-black", id: "btn-login" %>
+        <% end %>
         </li>
       <% end %>
     </ul>

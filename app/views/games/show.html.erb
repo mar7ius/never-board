@@ -11,6 +11,10 @@
 <p>Address: <%= @game.address %></p>
 <p>Description: <%= @game.description %></p>
 <h2>Price: <%= @game.price %></h2>
+<p><% @article.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %><%= @game.photos %>
+</p>
 
   <% if policy(@game).update? %>
     <%= link_to '<- Edit', edit_game_path%>

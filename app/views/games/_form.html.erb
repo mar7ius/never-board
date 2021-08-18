@@ -7,6 +7,8 @@
           <%= f.input :category, collection: Game::CATEGORIES %>
           <%= f.input :address, placeholder: '1 rue de Matignon' %>
           <%= f.input :description, placeholder: '' %>
+          <%= f.input :photos, input_html: { multiple: true, id: 'photo-input', class: "d-none"}, label_html: { class: 'upload-photo'}, label: '📷 Upload the photos you want' %>
+         <%# <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
           <%= f.input :price, placeholder: '€' %>
           <%= f.submit class: 'btn btn-flat' %>
         <% end %>

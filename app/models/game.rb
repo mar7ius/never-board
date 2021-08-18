@@ -4,7 +4,7 @@ class Game < ApplicationRecord
   CATEGORIES = ["Pinball", "Pool", "Arcade game"]
 
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   validates :address, :description, :price, :category, presence: true
   validates :description, length: { minimum: 50 }
   validates :price, numericality: { greater_than: 1 }

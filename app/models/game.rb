@@ -1,7 +1,7 @@
 class Game < ApplicationRecord
   has_many_attached :photos
 
-  CATEGORIES = ["Pinball", "Pool", "Arcade game"]
+  CATEGORIES = ["Pinball", "Pool", "Arcade Game"]
 
   belongs_to :user
   has_many :bookings, dependent: :destroy

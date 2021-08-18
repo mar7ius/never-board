@@ -1,7 +1,7 @@
 <% if (controller_name == "pages" && action_name == "home") %>
-<div class="navbar navbar-expand-sm navbar-lewagon navbar-transparent fixed-top">
+  <div class="navbar navbar-expand-sm navbar-lewagon navbar-transparent fixed-top">
 <% else %>
-<div class="navbar navbar-expand-sm navbar-lewagon navbar-white">
+  <div class="navbar navbar-expand-sm navbar-lewagon navbar-white">
 <% end %>
 
   <%= link_to root_path, class: "navbar-brand" do %>
@@ -15,11 +15,16 @@
 
 <%# class="collapse navbar-collapse" %>
   <div id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav align-items-center flex-sm-nowrap mr-auto">
+      <li class="nav-item active mx-4">
+        <% if (controller_name == "pages" && action_name == "home") %>
+          <%= link_to "Add a new game", new_game_path , class: "btn-clear btn-white", id: "link-add-new" %>
+        <% else %>
+          <%= link_to "Add a new game", new_game_path , class: "btn-clear btn-black", id: "link-add-new" %>
+        <% end %>
+        </li>
+
       <% if user_signed_in? %>
-        <%# <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        <%#</li> %>
         <li class="nav-item dropdown">
           <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

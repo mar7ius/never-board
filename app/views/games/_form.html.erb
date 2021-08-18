@@ -9,20 +9,16 @@
 
      <%= simple_form_for @game do |f| %>
         <h3><%= @text %></h3>
-        <div class="form-inputs">
-          <%= f.input :category, collection: Game::CATEGORIES, required: true %>
-          <%= f.input :address, placeholder: '1 rue de Matignon', required: true %>
-          <%= f.input :description, placeholder: '', required: true %>
-          <%= f.input :photos, input_html: { multiple: true, id: 'photo-input', class: "d-none"}, label_html: { class: 'upload-photo'}, label: '📷 Upload the photos you want', required: true %>
-         <%# <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-          <%= f.input :price, placeholder: '€',required: true %>
-            <div class="form-actions">
-            <%= f.button :submit, "Sign up", class: "btn btn-primary rounded-pill" %>
-            </div>
-          <% end %>
-        </div>
 
-
+          <%= f.input :category, collection: Game::CATEGORIES %>
+          <%= f.input :address, placeholder: '1 rue de Matignon' %>
+          <%= f.input :description, placeholder: '' %>
+          <%= f.input :photos, input_html: { multiple: true, id: 'photo-input', class: "d-none"}, label_html: { class: 'upload-photo'}, label: '📷  Upload the photos you want' %>
+          <div class="photo-previews"></div>
+          <%= f.input :price, placeholder: '€' %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
+      </div>
 
     </div>
     </div>

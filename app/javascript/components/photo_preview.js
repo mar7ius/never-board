@@ -12,14 +12,17 @@ const previewImageOnFileSelect = () => {
 
 const displayPreview = (input) => {
   if (input.files && input.files[0]) {
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      console.log(event.currentTarget.result)
-      document.getElementById('photo-preview').src = event.currentTarget.result;
-      document.getElementById('photo-preview-2').src = event.currentTarget.result;
-    }
-    reader.readAsDataURL(input.files[0])
-    document.getElementById('photo-preview').classList.remove('hidden');
+    Object.values(input.files).forEach((file) => {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const img = `<img width="100" class="" id="photo-preview" src="${event.currentTarget.result}">`;
+
+        document.querySelector('.photo-previews').insertAdjacentHTML('beforeend', img);
+      }
+      reader.readAsDataURL(file);
+      document.querySelector('.photo-previews').classList.remove('hidden');
+
+    })
   }
 }
 

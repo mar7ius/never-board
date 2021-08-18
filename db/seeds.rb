@@ -1,5 +1,5 @@
-User.destroy_all
 Game.destroy_all
+User.destroy_all
 
 require "faker"
 require "open-uri"
@@ -33,7 +33,7 @@ puts "add a game to default user"
     "arcade game" => "https://upload.wikimedia.org/wikipedia/commons/3/3f/Donkey_Kong_arcade_at_the_QuakeCon_2005.png",
   }
   puts "adding image to game.."
-  game_image = URI.open(list_url_games[game.category])
+  game_image = URI.open(list_url_games[game.category.downcase])
   game.photos.attach(io: game_image, filename: "images")
   puts "image added, attributing a user.."
   game.user = default
@@ -79,7 +79,7 @@ users = User.all
     "arcade game" => "https://upload.wikimedia.org/wikipedia/commons/3/3f/Donkey_Kong_arcade_at_the_QuakeCon_2005.png"
   }
   puts "adding image to game.."
-  game_image = URI.open(list_url_games[game.category])
+  game_image = URI.open(list_url_games[game.category.downcase])
   game.photos.attach(io: game_image, filename: "images")
   sleep 10
   puts "image added, attributing a user.."

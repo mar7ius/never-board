@@ -1,7 +1,7 @@
 class GamePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where.not(user: user).order(created_at: :desc)
+      scope.all
     end
   end
 
@@ -13,6 +13,10 @@ class GamePolicy < ApplicationPolicy
     return true
   end
 
+  def edit?
+    record.user == user
+  end
+
   def update?
     record.user == user
   end
@@ -20,5 +24,4 @@ class GamePolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
-
 end

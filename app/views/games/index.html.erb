@@ -1,13 +1,10 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>All games</h1>
-      <ul class="list-group">
-        <% @games.each do |game| %>
-          <%= link_to "#{game.category}", game_path(game) %>
-        <% end %>
-      </ul>
-      <%= link_to "Add a new game", new_game_path, class: 'btn btn-primary' %>
-    </div>
+
+<div class="container mt-4">
+<h2>All Games</h2>
+</div>
+
+<div class="container mt-4">
+  <div class="cards">
+  <%= render 'shared/card', games: @games %>
   </div>
 </div>

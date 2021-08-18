@@ -12,3 +12,18 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+a {
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+h2 {
+  font-family: 'Bungee Shade', cursive;
+}

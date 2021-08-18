@@ -1,4 +1,5 @@
 <% @games.each do |game| %>
+<%= link_to game_path(game) do %>
 
   <div class="game-card">
 
@@ -12,5 +13,5 @@
         </div>
       </div>
     </div>
-
+<% end  %>
 <% end %>

@@ -21,7 +21,7 @@
   <% end %>
 
   <% if policy(@game).destroy? %>
-      <%= link_to '<- Delete', game_path, method: :delete %>
+      <%= link_to '<- Delete', game_path, method: :delete, data: { confirm: "Are you sure ?"} %>
    <% end %>
 
     </div>

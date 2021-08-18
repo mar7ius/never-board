@@ -1,0 +1,41 @@
+div.images-box {
+  height: 350px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+
+
+  div.img-principal {
+    width: 200px;
+    height: 350px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    margin-right: 3px;
+    background-size: cover;
+
+  }
+
+    div.img-sup-1 {
+      width: 200px;
+      height: 350px;
+      margin-right: 3px;
+    }
+
+    div.img-sup-2 {
+      width: 200px;
+      height: 350px;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+
+}
+
+
+.game-header {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

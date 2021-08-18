@@ -1,3 +1,5 @@
+<% require "open-uri" %>
+
 <% if (controller_name == "pages" && action_name == "home") %>
   <div class="navbar navbar-expand-sm navbar-lewagon navbar-transparent fixed-top">
 <% else %>
@@ -26,7 +28,14 @@
 
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
+         <% if current_user.avatar.attached? %>
           <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+        <% avatar = URI.open("https://res.cloudinary.com/dyzqasku8/image/upload/v1629294683/user1_vur3nu.png") %>
+         <% current_user.avatar.attach(io: avatar, filename: "image") %>
+         <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+         <% end %>
+
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>

@@ -13,6 +13,10 @@ class GamePolicy < ApplicationPolicy
     return true
   end
 
+  def edit?
+    record.user == user
+  end
+
   def update?
     record.user == user
   end
@@ -20,5 +24,4 @@ class GamePolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
-
 end

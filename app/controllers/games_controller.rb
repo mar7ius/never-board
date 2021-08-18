@@ -27,6 +27,7 @@ class GamesController < ApplicationController
   end
 
   def edit
+    authorize @game
   end
 
   def update

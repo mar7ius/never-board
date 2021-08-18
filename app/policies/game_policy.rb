@@ -1,7 +1,7 @@
 class GamePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where.not(user: user).order(created_at: :desc)
+      scope.all
     end
   end
 

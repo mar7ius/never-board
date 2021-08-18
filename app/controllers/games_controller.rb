@@ -13,6 +13,7 @@ class GamesController < ApplicationController
   def new
     @game = Game.new
     authorize @game
+    @text = "Add your game"
   end
 
   def create
@@ -20,7 +21,7 @@ class GamesController < ApplicationController
     authorize @game
     @game.user = current_user
     if @game.save
-      redirect_to games_path
+      redirect_to game_path(@game)
     else
       render :new
     end
@@ -28,6 +29,7 @@ class GamesController < ApplicationController
 
   def edit
     authorize @game
+    @text = "Edit your game"
   end
 
   def update

@@ -4,7 +4,11 @@ class GamesController < ApplicationController
 
   def index
     @games = policy_scope(Game)
-    @markers = Game.geocoded.map do |game|
+    if (params[:category].present? && params[:address].present? )
+       sql_query = "category ILIKE :query OR description ILIKE :query"
+      @games = @games.near(params[:address]).where(sql_query, category: params[:category].downcase.capitalize)
+    end
+    @markers = @games.geocoded.map do |game|
       {
         lat: game.latitude,
         lng: game.longitude,

@@ -33,6 +33,8 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'geocoder'
+gem 'pg_search', '~> 2.3.0'
+gem 'active_storage_validations'
 
 gem 'cloudinary', '~> 1.16.0'
 gem 'pundit'

@@ -1,28 +1,39 @@
-<div class="container">
-  <div class="row">
-    <div class="col-8">
-      <div class="game-card">
+<div class="container mt-4">
 
-<h1>Category: <%= @game.category %></h1>
-<p>Address: <%= @game.address %></p>
-<p>Description: <%= @game.description %></p>
-<h2>Price: <%= @game.price %></h2>
-<p><% @game.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 100, width: 150, crop: :fill %>
-  <% end %><%= @game.photos %>
-</p>
+<div class="d-flex justify-content-between">
 
   <% if policy(@game).update? %>
-    <%= link_to '<- Edit', edit_game_path%>
-  <% end %>
-
-  <% if policy(Game).create? %>
-    <%= link_to "New game", new_game_path %>
+    <%= link_to 'Edit', edit_game_path, class: "btn btn-outline-success px-4"%>
   <% end %>
 
   <% if policy(@game).destroy? %>
-      <%= link_to '<- Delete', game_path, method: :delete, data: { confirm: "Are you sure ?"} %>
+      <%= link_to 'Delete', game_path, method: :delete, data: { confirm: "Are you sure ?"}, class: "btn btn-outline-danger px-4" %>
    <% end %>
+
+</div>
+
+  <div class="game-header mt-4">
+  <div class="game-title">
+  <h2><%= @game.category %></h2>
+  <h6><%= @game.address %></h6>
+  </div>
+  <h5 class="gc-price"><i class="fas fa-euro-sign"></i><%= @game.price %>/jours</h5>
+  </div>
+
+  <div class="images-box mt-4">
+    <div class="img-principal p-2 flex-grow-1" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), url(<%= cl_image_path @game.photos.first.key %>);"></div>
+    <div class="img-sup-2 p-2 flex-grow-1" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), url(<%= cl_image_path @game.photos.last.key %>); background-size: cover;"></div>
+    <%# <div class="img-sup-2 p-2 flex-grow-1" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), url( cl_image_path @game.photos[1].key); background-size: cover;"></div> %>
+  </div>
+
+<div class="container mt-5">
+<h2>Description:</h2>
+<p><%= @game.description %></p>
+</div>
+
+
+
+
 
     </div>
 

@@ -32,3 +32,8 @@ h2 {
 p {
   color: #fefefe;
 }
+
+.content-wrapper {
+  min-height: calc(100vh - 70px - 80px);
+  // margin: 100px;
+}

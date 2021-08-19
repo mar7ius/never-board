@@ -6,7 +6,8 @@
 
 .bricks-wall {
   position: absolute;
-  width: 100%;
+  max-width: 99vh;
+  min-width: 90vw;
   // top: -85vh;
   // left: 0;
   z-index: 19;

@@ -3,6 +3,7 @@ User.destroy_all
 
 require "faker"
 require "open-uri"
+require "yaml"
 
 list_url_avatar = [
   "https://res.cloudinary.com/dyzqasku8/image/upload/v1629191122/avatar_seed_neverboard/avatar_1_wqluot.png",

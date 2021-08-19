@@ -4,10 +4,30 @@ class GamesController < ApplicationController
 
   def index
     @games = policy_scope(Game)
+    if (params[:category].present? && params[:address].present? )
+       sql_query = "category ILIKE :query OR description ILIKE :query"
+      @games = @games.near(params[:address]).where(sql_query, category: params[:category].downcase.capitalize)
+    end
+    @markers = @games.geocoded.map do |game|
+      {
+        lat: game.latitude,
+        lng: game.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { game: game }),
+        image_url: helpers.asset_url('logo-never-board.png')
+      }
+    end
   end
 
   def show
+    @game = Game.find(params[:id])
+    @booking = Booking.new
     authorize @game
+    @marker = [{
+        lat: @game.latitude,
+        lng: @game.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { game: @game }),
+        image_url: helpers.asset_url('logo-never-board.png')
+      }]
   end
 
   def new

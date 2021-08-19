@@ -9,7 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 import { initFlatpickr } from "../plugins/flatpickr";
 
-initFlatpickr();
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -29,6 +29,9 @@ initFlatpickr();
 import "bootstrap";
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { previewImageOnFileSelect } from '../components/photo_preview';
+import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -38,4 +41,10 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   // initUpdateNavbarOnScroll();
   previewImageOnFileSelect();
+  initMapbox();
+
+  initAutocomplete();
+
+  initFlatpickr();
+
 });

@@ -12,8 +12,11 @@
   </head>
 
   <body>
+    <%# <%= render 'shared/gradient'%>
+    <div class="gradient">
     <%= render 'shared/navbar' unless (controller_name == "pages" && action_name == "home")  %>
     <%= render 'shared/flashes' %>
     <%= yield %>
+    </div>
   </body>
 </html>

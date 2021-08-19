@@ -3,14 +3,14 @@
 
   <div class="game-card">
 
-      <div class="gc-photos" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.2)), url(<%= cl_image_path game.photos.first.key %>); background-size: cover;">
+      <div class="gc-photos" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url(<%= cl_image_path game.photos.first.key %>); background-size: cover;">
         <span class="gc-price"><i class="fas fa-euro-sign"></i><%= game.price %></span>
-      </div>
       <div class="gc-content">
         <div class="gc-left-txt">
           <span class="gc-title"><%= game.category %></span>
           <span class="gc-address"><%= game.address %></span>
         </div>
+      </div>
       </div>
     </div>
 <% end  %>

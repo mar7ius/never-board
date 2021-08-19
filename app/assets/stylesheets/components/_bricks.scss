@@ -5,14 +5,16 @@
 }
 
 .bricks-wall {
-  position: relative;
-  top: -85vh;
-  left: 0;
-  z-index: 0;
-  height: 80vh;
+  position: absolute;
+  width: 100%;
+  // top: -85vh;
+  // left: 0;
+  z-index: 19;
+  // height: 80vh;
+  max-height: 60vh;
   opacity: 0.7;
   // background-color: linear-gradient(rgba(143, 21, 21, 0.459), rgba(45, 131, 120, 0.568));
-  background-size: cover;
+  // background-size: cover;
   overflow: hidden;
 
   display: flex;

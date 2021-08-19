@@ -3,6 +3,9 @@
 <div class="banner neon-banner">
   <%= render 'shared/navbar' %>
 
+  <div class="bricks-wall">
+    <%= render 'shared/bricks_wall', class: "z-index" %>
+  </div>
 
   <div class="neon-box">
     <div class="d-flex justify-content-end">
@@ -34,10 +37,6 @@
     <div class="d-flex justify-content-start">
       <div class="neon-horiz-30 neon-yellow neon-bottom mt-5"></div>
     </div>
-  </div>
-
-  <div class="bricks-wall">
-    <%= render 'shared/bricks_wall', class: "z-index" %>
   </div>
 </div>
 

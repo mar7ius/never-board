@@ -29,6 +29,7 @@ initFlatpickr();
 import "bootstrap";
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { previewImageOnFileSelect } from '../components/photo_preview';
+import { initMapbox } from '../plugins/init_mapbox';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -38,4 +39,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initUpdateNavbarOnScroll();
   previewImageOnFileSelect();
+  initMapbox();
 });

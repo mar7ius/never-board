@@ -10,7 +10,7 @@
      <%= simple_form_for @game do |f| %>
         <h3><%= @text %></h3>
           <%= f.input :category, label: "Choose the category", placeholder: '', collection: Game::CATEGORIES %>
-          <%= f.input :address, label: "What's the adress ?", placeholder: '1 rue de Matignon' %>
+          <%= f.input :address, label: "What's the address ?", placeholder: '1 rue de Matignon' %>
           <%= f.input :description, label: "Describe it", placeholder: 'Min 50 char.' %>
           <%= f.input :photos, input_html: { multiple: true, id: 'photo-input', class: "d-none"}, label_html: { class: 'upload-photo'}, label: '📷  Upload the photos you want' %>
           <div class="photo-previews"></div>

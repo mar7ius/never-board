@@ -4,10 +4,24 @@ class GamesController < ApplicationController
 
   def index
     @games = policy_scope(Game)
+    @markers = Game.geocoded.map do |game|
+      {
+        lat: game.latitude,
+        lng: game.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { game: game }),
+        image_url: helpers.asset_url('logo-never-board.png')
+      }
+    end
   end
 
   def show
     authorize @game
+    @marker = [{
+        lat: @game.latitude,
+        lng: @game.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { game: @game }),
+        image_url: helpers.asset_url('logo-never-board.png')
+      }]
   end
 
   def new

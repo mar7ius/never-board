@@ -4,11 +4,9 @@ class GamesController < ApplicationController
 
   def index
     @games = policy_scope(Game)
-    if params[:category].present?
-      @games = @games.where(category: params[:category])
-    end
-    if params[:address].present?
-      @games = @games.near(params[:address])
+    if (params[:category].present? && params[:address].present? )
+       sql_query = "category ILIKE :query OR description ILIKE :query"
+      @games = @games.near(params[:address]).where(sql_query, category: params[:category].downcase.capitalize)
     end
     @markers = @games.geocoded.map do |game|
       {

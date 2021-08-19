@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   resources :games do
     resources :bookings
   end
+
+  # get "pages", to: "pages#dashboard"
+  get "pages/dashboard"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

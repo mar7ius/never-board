@@ -43,15 +43,11 @@
   <div class="d-flex justify-content-between">
 
     <div class="cards">
-        <% [@game, @booking].each do |game| %>
-          <div class="game-header mt-4">
-            <div class="game-title">
-              <h2><%= @booking.start_date%></h2>
-
-            </div>
-          </div>
+        <% @bookings_i_made.each do |booking| %>
+         <h1>BOOKING IDEA</h1>
 
         <% end %>
     </div>
+    <%= @bookings_for_my_games.to_a %>
   </div>
 </div>

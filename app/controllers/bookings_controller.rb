@@ -15,11 +15,11 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save
-      flash[:success] = "Your game has been booked"
-      redirect_to root_path
+      flash[:alert] = "Your game has been booked"
+      redirect_to pages_dashboard_path
     else
-      flash[:error] = "Booking unsuccessful"
-      render :new
+      flash[:alert] = "Booking unsuccessful"
+      redirect_to game_path(@game)
     end
   end
 

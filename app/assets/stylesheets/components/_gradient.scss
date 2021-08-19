@@ -1,0 +1,11 @@
+.gradient {
+  background: #152028;
+  background: linear-gradient(312deg, #350d35 18%, #152028 81%);
+  backdrop-filter: blur(400px);
+  position: absolute;
+  left: 0;
+  top: 0%;
+  min-height: 100vh;
+  min-width: 100%;
+  z-index: -1;
+}

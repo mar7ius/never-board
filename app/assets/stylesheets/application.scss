@@ -27,4 +27,14 @@ a {
 
 h2 {
   font-family: 'Bungee Shade', cursive;
+  color: #fefefe;
+}
+
+p {
+  color: #fefefe;
+}
+
+.content-wrapper {
+  min-height: calc(100vh - 70px - 80px);
+  // margin: 100px;
 }

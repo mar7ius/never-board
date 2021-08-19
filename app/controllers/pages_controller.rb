@@ -8,4 +8,11 @@ class PagesController < ApplicationController
       @games = Game.all
     end
   end
+
+  def dashboard
+    # @pages = Page.find(params[:id])
+    @games = Game.where(user: current_user)
+    @bookings_i_made = Booking.where(user: current_user)
+    @bookings_for_my_games = Booking.joins(:game).where(games: {user: current_user})
+  end
 end

@@ -19,6 +19,8 @@ class GamesController < ApplicationController
   end
 
   def show
+    @game = Game.find(params[:id])
+    @booking = Booking.new
     authorize @game
     @marker = [{
         lat: @game.latitude,

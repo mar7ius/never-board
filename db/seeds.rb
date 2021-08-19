@@ -21,6 +21,7 @@ default.save!
 
 puts "add a game to default user"
 
+michel_games = []
 2.times do
   game = Game.new(
     category: Game::CATEGORIES.sample,
@@ -40,14 +41,16 @@ puts "add a game to default user"
   game.user = default
   puts "user attributed, try to save.."
   game.save!
+  michel_games << game
 end
 
 
 
 puts "default user created, add some random users.."
 puts "creating 10 users..."
+users = []
+i = 1
 10.times do
-  i = 1
   puts "Creating user n°#{i}"
   user = User.new(
     first_name: Faker::Name.first_name,
@@ -58,15 +61,15 @@ puts "creating 10 users..."
 
   avatar = URI.open(list_url_avatar.sample)
   user.avatar.attach(io: avatar, filename: "image")
-  sleep 10
+  sleep 3
   puts "user n°#{i} created, try to save..."
   user.save!
+  users << user
   puts "user n°#{i} saved !"
   i += 1
 end
 
-users = User.all
-
+  games = []
 20.times do
   game = Game.new(
     category: Game::CATEGORIES.sample,
@@ -82,9 +85,59 @@ users = User.all
   puts "adding image to game.."
   game_image = URI.open(list_url_games[game.category.downcase])
   game.photos.attach(io: game_image, filename: "images")
-  sleep 10
+  sleep 3
   puts "image added, attributing a user.."
-  game.user = User.all.sample
+  game.user = users.sample
   puts "user attributed, try to save.."
   game.save!
+  games << game
 end
+
+puts "creating bookings.."
+  Booking.create!(
+    start_date: Date.today,
+    end_date: Date.today() + 2,
+    status: 0,
+    user: default,
+    game: games.sample
+  )
+
+  Booking.create!(
+    start_date: Date.today,
+    end_date: Date.today() + 4,
+    status: 1,
+    user: default,
+    game: games.sample
+  )
+
+  Booking.create!(
+    start_date: Date.today() - 1,
+    end_date: Date.today() + 1,
+    status: 2,
+    user: default,
+    game: games.sample
+  )
+
+  Booking.create!(
+    start_date: Date.today,
+    end_date: Date.today() + 2,
+    status: 0,
+    user: users.sample,
+    game: michel_games.sample
+  )
+
+  Booking.create!(
+    start_date: Date.today,
+    end_date: Date.today() + 4,
+    status: 1,
+    user: users.sample,
+    game: michel_games.sample
+  )
+
+  Booking.create!(
+    start_date: Date.today() - 1,
+    end_date: Date.today() + 1,
+    status: 2,
+    user: users.sample,
+    game: michel_games.sample
+  )

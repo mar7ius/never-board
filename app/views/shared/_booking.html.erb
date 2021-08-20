@@ -1,15 +1,14 @@
-<div class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
+<div class="row justify-content-center">
+  <div class="col-12 col-md-6">
       <div class="bg-dark rounded p-3 shadow">
-        <h3 style="justify-content: center">Your Booking <i class="fas fa-gamepad"></i></h3>
-        <%= simple_form_for [@game, @booking] do |f| %>
-          <div style="display: flex; justify-content: center">
+        <h3>Let's book this game ! <i class="fas fa-gamepad"></i></h3>
+          <%= simple_form_for [@game, @booking] do |f| %>
+        <div style="display: flex; justify-content: center">
           <%= f.input :start_date, as: :string, label: "When you'll start to play", placeholder: 'jj/mm/yyyy', required: false, input_html: {id: "range_start", class: "datepicker"} %>
           <%= f.input :end_date, as: :string, label: "When you'll return the machine", placeholder: 'jj/mm/yyyy', required: false, input_html: {id: "range_end", class: "datepicker"} %>
-          </div>
-          <%= f.button :submit, "Let's Play", class: "btn btn-primary" %>
-        <% end %>
+        </div>
+        <%= f.button :submit, "Let's Play", class: "btn btn-primary" %>
+          <% end %>
       </div>
     </div>
   </div>

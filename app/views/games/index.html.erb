@@ -1,16 +1,16 @@
 <div class="new-products">
-  <div class="container mt-4">
+
+  <div class="container space-block-top-bottom-15">
   <h2>All Games</h2>
   </div>
 
-  <div class="container mt-4">
+  <div class="container space-block-top-bottom-20">
     <div class="cards">
     <%= render 'shared/card', games: @games %>
     </div>
   </div>
+
+  <div class="container space-block-top-bottom-20">
+    <%= render "map", marker: @markers %>
+  </div>
 </div>
-
-
-
-
-<%= render "map", marker: @markers %>

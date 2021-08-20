@@ -1,22 +1,22 @@
 <% @games.each do |game| %>
-<%= link_to game_path(game) do %>
+  <%= link_to game_path(game) do %>
 
-  <div class="game-card">
-
+    <div class="game-card">
 
       <div class="gc-photos" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url(<%= cl_image_path game.photos.first.key %>); background-size: cover;">
-        <span class="gc-price"><i class="fas fa-euro-sign"></i><%if game.price - game.price.round == 0%>
-        <%=game.price.round %>
-        <%end%></span>
+
+        <span class="gc-price"><i class="fas fa-euro-sign"></i><%= game.price %></span>
+
+        <div class="gc-content">
+          <div class="gc-left-txt">
+            <span class="gc-title"><%= game.category %></span>
+            <span class="gc-address"><i class="fas fa-map-marker-alt"> </i> <%= game.address %></span>
+          </div>
+        </div>
+
       </div>
 
-      <div class="gc-content">
-        <div class="gc-left-txt">
-          <span class="gc-title"><%= game.category %></span>
-          <span class="gc-address"><i class="fas fa-map-marker-alt"> </i> <%= game.address %></span>
-        </div>
-      </div>
-      </div>
     </div>
-<% end  %>
+
+  <% end  %>
 <% end %>

@@ -2,3 +2,25 @@
   padding-top: 150px;
   padding-bottom: 150px;
 }
+
+.content-wrapper {
+  min-height: calc(100vh - 70px - 80px);
+  // margin: 100px;
+}
+
+.simple_form {
+  min-width: 25vw;
+  color: #fefefe;
+
+  a {
+    color: #fefefe;
+  }
+
+}
+
+.space-block-top-bottom-20 {
+  margin-top: 20vh;
+}
+.space-block-top-bottom-15 {
+  margin-top: 15vh;
+}

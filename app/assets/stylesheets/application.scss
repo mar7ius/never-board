@@ -17,12 +17,16 @@
 
 a {
   text-decoration: none;
-  color: black;
+  color: #fefefe;
 
   &:hover {
     text-decoration: none;
-    color: black;
+    color: #fefefe;
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #fefefe;
 }
 
 h2 {
@@ -34,7 +38,24 @@ p {
   color: #fefefe;
 }
 
-.content-wrapper {
-  min-height: calc(100vh - 70px - 80px);
-  // margin: 100px;
-}
+// .content-wrapper {
+//   min-height: calc(100vh - 70px - 80px);
+//   // margin: 100px;
+// }
+
+// .simple_form {
+//   min-width: 25vw;
+//   color: #fefefe;
+
+//   a {
+//     color: #fefefe;
+//   }
+
+// }
+
+// .space-block-top-bottom-20 {
+//   margin-top: 20vh;
+// }
+// .space-block-top-bottom-15 {
+//   margin-top: 15vh;
+// }

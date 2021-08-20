@@ -1,3 +1,4 @@
+
 <div class="search-bar">
   <div class="search-input">
     <%= form_tag games_path, method: :get do %>
@@ -12,6 +13,7 @@
     <%= text_field_tag :address,
       params[:address],
       class: "form-control search-field",
+      id: 'game_address',
       placeholder: "Find by place"
     %>
   </div>

@@ -26,6 +26,7 @@ import { initFlatpickr } from "../plugins/flatpickr";
 // ----------------------------------------------------
 
 // External imports
+import "controllers"
 import "bootstrap";
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { previewImageOnFileSelect } from '../components/photo_preview';

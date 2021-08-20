@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2021_08_19_092340) do
     t.string "category"
     t.string "address"
     t.text "description"
-    t.float "price"
+    t.integer "price"
     t.boolean "available", default: true, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

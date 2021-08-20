@@ -2,6 +2,9 @@ require "faker"
 require "open-uri"
 require "yaml"
 
+User.destroy_all
+
+
 address_paris = [
   "65 Faubourg Saint Honoré Paris",
   "69 Rue de Turbigo, 75003 Paris",

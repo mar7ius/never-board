@@ -1,0 +1,115 @@
+.cards-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 25px;
+  justify-items: center;
+
+}
+.card-dashboard {
+  overflow: hidden;
+  height: 205px;
+  width: 340px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.gc-dashboard-photos {
+  height: 300px;
+  width: auto;
+  border-radius: 10px;
+  position: relative;
+  }
+
+.gc-dashboard-content {
+  font-size: 14px;
+  flex-direction: row;
+  margin-top: 5px;
+  padding: 10px 10px;
+  visibility: hidden;
+
+.gc-dashboard-txt {
+  display:flex;
+  flex-direction: column;
+
+.gc-dashboard-title {
+  font-weight: bold;
+  color: rgb(21, 19, 19);
+  font-size: 16px;
+  }
+
+.gc-dashboard-address {
+  font-weight: lighter;
+  color: rgb(31, 29, 29);
+    }
+ }
+}
+
+
+.card-dashboard h3 {
+  font-size: 14px;
+  font-weight: bold;
+
+  color: black;
+  margin: 0;
+}
+
+.card-dashboard p {
+  font-size: 12px;
+  line-height: 1;
+  color: black;
+
+}
+
+.card-dashboard .card-dashboard-infos {
+  padding: 16px;
+  width: 100%;
+}
+
+.gc-dashboard-price {
+    visibility: hidden;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    padding: 3px 15px;
+    border-radius: 14px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color:rgba(0,0,0,0.8);
+
+
+    .fa-euro-sign {
+      font-size: 15px;
+    }
+  }
+
+
+  // Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

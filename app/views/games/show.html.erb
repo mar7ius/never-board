@@ -18,7 +18,7 @@
         <h2><%= @game.category %></h2>
         <h6><%= @game.address %></h6>
       </div>
-      <h5 class="gc-price"><i class="fas fa-euro-sign"></i><%= @game.price %>/jours</h5>
+      <h5 class="gc-price" id="price" data-price="<%=@game.price%>"><i class="fas fa-euro-sign"></i><%= @game.price %>/day</h5>
     </div>
 
     <div class="images-box space-block-top-bottom-20">
